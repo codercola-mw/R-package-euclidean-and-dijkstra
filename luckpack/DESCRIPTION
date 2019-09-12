@@ -1,0 +1,10 @@
+Package: luckpack
+Type: Package
+Title: Euclidean and Dijkstras package
+Version: 1.0
+Date: 2019-09-12
+Author: Mecon
+Maintainer: Mecon to <wenwo535@liu.se>
+Description: More about what it does (maybe more than one line)
+License: What license is it under?
+RoxygenNote: 6.1.1
