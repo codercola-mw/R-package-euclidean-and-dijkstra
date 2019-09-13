@@ -1,4 +1,4 @@
-#' wiki_graph
+#' Graph containing the edges and the weight of the edges.
 #'
 #' A data frame containing three variables; the edges of a graph and 
 #' the weight of the edges.
