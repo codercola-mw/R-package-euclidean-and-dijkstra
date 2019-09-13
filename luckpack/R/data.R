@@ -9,5 +9,6 @@
 #'   \item{v2}{edges}
 #'   \item{w}{weight of the edges}
 #' }
+#' @name wiki_graph
 #' @source \url{https://en.wikipedia.org/wiki/Dijkstra%27s_algorithm}
 NULL
