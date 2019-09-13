@@ -1,4 +1,4 @@
-#' Graph containing the edges and the weight of the edges.
+#' wiki_graph
 #'
 #' A data frame containing three variables; the edges of a graph and 
 #' the weight of the edges.
@@ -10,4 +10,4 @@
 #'   \item{w}{weight of the edges}
 #' }
 #' @source \url{https://en.wikipedia.org/wiki/Dijkstra%27s_algorithm}
-"wiki_graph"
+NULL
