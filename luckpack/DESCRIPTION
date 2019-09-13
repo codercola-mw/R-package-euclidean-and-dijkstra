@@ -4,7 +4,7 @@ Title: Euclidean and Dijkstras package
 Version: 1.0
 Date: 2019-09-12
 Author: Mecon
-Maintainer: Mecon to <wenwo535@liu.se>
-Description: This package is containing two functions.
+Maintainer: Mecon to <wenwo535@student.liu.se>
+Description: This package contains two functions.
 License: GPL-3
 RoxygenNote: 6.1.1
