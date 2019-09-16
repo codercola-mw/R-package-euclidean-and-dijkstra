@@ -6,6 +6,7 @@
 #' @examples
 #' euclidean(1, 1)
 #' euclidean(10, 1)
+#' @export
 euclidean <- function(x,y){
   r <- x%%y;
   return(ifelse(r, euclidean(y, r), y))
