@@ -8,5 +8,7 @@ Maintainer: Mecon to <wenwo535@student.liu.se>
 Description: This package contains two functions, one that utilizes the euclidean algorith and one the dijkstra algorithm.
 License: GPL-3
 RoxygenNote: 6.1.1
-Suggests: 
-    testthat
+Suggests: testthat
+NeedsCompilation: no
+Packaged: 2019-09-16 16:17:02 UTC; Bjorn
+Depends: R (>= 3.5.0)
