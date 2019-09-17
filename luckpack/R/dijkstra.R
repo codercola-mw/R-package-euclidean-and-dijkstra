@@ -12,12 +12,13 @@ dijkstra<-function(graph,init_node)
 {
    #Check if the class of the arguments is correct
   stopifnot(class(graph)=="data.frame" && class(init_node)=="numeric" && any(graph[1:2]==init_node)) #Changed OR to AND, because it didn't throw error for init_node = 0
-
+  stopifnot(colnames(graph) == c("v1", "v2", "w"))
+  
   #vertex_set vector == Q
   #dist vector == dist
   
   #First for each doesn't need to be a loop
-  vertex_set<-unique(wiki_graph[,1]) #vector of nodes(vertex)
+  vertex_set<-unique(graph[,1]) #vector of nodes(vertex)
   dist<-rep(Inf,length(vertex_set)) #filling up vector dist with Inf as many times as many nodes(vertex) there are
   dist[init_node]=0 #setting dist of init_node to 0
   
