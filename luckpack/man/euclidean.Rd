@@ -2,22 +2,22 @@
 % Please edit documentation in R/euclidean.R
 \name{euclidean}
 \alias{euclidean}
-\title{Create E Alg}
+\title{The Euclidean Algorithm}
 \usage{
 euclidean(x, y)
 }
 \arguments{
-\item{x}{A numberical value}
+\item{x}{A numerical value}
 
-\item{y}{A numberical value}
+\item{y}{A numerical value}
 }
 \value{
-The greatest common divisior
+The greatest common divisior of two numbers
 }
 \description{
-Create E Alg
+The Euclidean Algorithm
 }
 \examples{
-euclidean(1, 1)
-euclidean(10, 1)
+euclidean(123612, 13892347912)
+euclidean(100, 1000)
 }
