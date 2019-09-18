@@ -10,49 +10,40 @@
 #' @export
 dijkstra<-function(graph,init_node)
 {
-   #Check if the class of the arguments is correct
+   #stop if the classes are not the correct type
   stopifnot(class(graph)=="data.frame" && class(init_node)=="numeric" && any(graph[1:2]==init_node)) #Changed OR to AND, because it didn't throw error for init_node = 0
   stopifnot(colnames(graph) == c("v1", "v2", "w"))
   
-  #vertex_set vector == Q
-  #dist vector == dist
+  vec1<-unique(graph[,1]) #make vector for the vertex nodes
+  dist<-rep(Inf,length(vec1)) #filling up vector with Infs for every vertex node
+  dist[init_node]=0 #distance of initial node set to 0
   
-  #First for each doesn't need to be a loop
-  vertex_set<-unique(graph[,1]) #vector of nodes(vertex)
-  dist<-rep(Inf,length(vertex_set)) #filling up vector dist with Inf as many times as many nodes(vertex) there are
-  dist[init_node]=0 #setting dist of init_node to 0
-  
-  #while not every vertex_set element is set to NA
-  while (sum(is.na(vertex_set))<length(vertex_set)) {
+  #while node is not vertex set the element to 0
+  while (sum(is.na(vec1))<length(vec1)) {
     
-    #u is the current node, whichever vertex has the minimum distance. In the starting case it will be the init_node
+    #a is current node, which vertex has minimum distance. Start from initial node 
     
-    indices_of_non_NA = which(!is.na(vertex_set)) #get the indices of the vertex_set which hasn't been set to NA
-    minimum_value_of_dist = min(dist[indices_of_non_NA]) #get the minimum value of dist on the indices, which hasn't been set to NA
-    minimum_index_of_dist = which(dist==minimum_value_of_dist) #get the index of the minimum value in dist
+    indices_of_non_NA = which(!is.na(vec1)) #for the indices of the vector which are not already NA
+    minimum_value_of_dist = min(dist[indices_of_non_NA]) #calculate the min of the non NA indices 
+    minimum_index_of_dist = which(dist==minimum_value_of_dist) 
     
-    u = vertex_set[intersect(indices_of_non_NA,minimum_index_of_dist)][1] #set u to the vertex which hasn't been set to NA AND has the minimum dist. [1] neccessary in case of multiple results.
+    a = vec1[intersect(indices_of_non_NA,minimum_index_of_dist)][1] 
     
-    #set the current node to NA, so it doesn't do the while loop again for it
-    vertex_set[u]=NA
+    #set current node to NA to stop while loop
+    vec1[a]=NA
     
-    #v is all the neighbours of current node(u)
-    #loop for all of u's neighbours that are still not set to NA in vertex_set
-    for (v in intersect(subset(graph,graph[,1]==u)[,2],vertex_set)) {
+    #v is all the neighbours of current node(a)
+    #forloop for all of a neighbours that are not NA in vec1
+    for (b in intersect(subset(graph,graph[,1]==a)[,2],vec1)) {
       
       #alt is the alternative distance which you get by going from the initial node to v through u
-      alt=dist[u] + subset(graph,graph[,1]==u & graph[,2]==v)[,3] #add the weight of the edge (==distance) (3rd column in data.frame)
+      alt=dist[a] + subset(graph,graph[,1]==a & graph[,2]==b)[,3] #add the weight of the edge (==distance) (3rd column in data.frame)
       
       #if alt is longer than an already existing route to v, we ignore it
-      if (alt<dist[v]) {
-        dist[v]=alt
+      if (alt<dist[b]) {
+        dist[b]=alt
       }
-
-
     }
-
   }
-  
-  
   return(dist) #return distances to each vertex from init_node in a vector (including itself)
 }
