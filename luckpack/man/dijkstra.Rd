@@ -2,23 +2,27 @@
 % Please edit documentation in R/dijkstra.R
 \name{dijkstra}
 \alias{dijkstra}
-\title{Create Dijkstras Alogrithm}
+\title{Dijkstras Alogrithm}
 \usage{
 dijkstra(graph, init_node)
 }
 \arguments{
-\item{graph}{A numberical value}
+\item{graph}{A graph}
 
-\item{init_node}{A numberical value}
+\item{init_node}{A numerical value}
 }
 \value{
-The shortest path
+The shortest path from the initial node to every other node in the graph
 }
 \description{
-Create Dijkstras Alogrithm
+Dijkstras Alogrithm
 }
 \examples{
-dijkstra(graph = data.frame(v1=c(1,1,1,2,2,2,3,3,3,3,4,4,4,5,5,6,6,6),v2=c(2,3,6,1,3,4,1,2,4,6,2,3,5,4,6,1,3,5),w=c(7,9,14,7,10,15,9,10,11,2,15,11,6,6,9,14,2,9)), 1)
-dijkstra(graph = data.frame(v1=c(1,1,1,2,2,2,3,3,3,3,4,4,4,5,5,6,6,6),v2=c(2,3,6,1,3,4,1,2,4,6,2,3,5,4,6,1,3,5),w=c(7,9,14,7,10,15,9,10,11,2,15,11,6,6,9,14,2,9)), 3)
+dijkstra(graph = data.frame(v1=c(1,1,1,2,2,2,3,3,3,3,4,4,4,5,5,6,6,6),
+v2=c(2,3,6,1,3,4,1,2,4,6,2,3,5,4,6,1,3,5),
+w=c(7,9,14,7,10,15,9,10,11,2,15,11,6,6,9,14,2,9)), 1)
+dijkstra(graph = data.frame(v1=c(1,1,1,2,2,2,3,3,3,3,4,4,4,5,5,6,6,6),
+v2=c(2,3,6,1,3,4,1,2,4,6,2,3,5,4,6,1,3,5),
+w=c(7,9,14,7,10,15,9,10,11,2,15,11,6,6,9,14,2,9)), 3)
 
 }
