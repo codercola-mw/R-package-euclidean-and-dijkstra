@@ -15,7 +15,7 @@ dijkstra<-function(graph,init_node){
   if (length(graph) != 3) stop("Graph does not have three variables")
   if (!is.numeric(init_node)) stop("Initial node is not a scalar")
   if (!any(graph[1:2]==init_node)) stop("Initial node not in graph")
-  if (!(colnames(graph) == c("v1", "v2", "w"))) stop("Wrong names of variables")
+  if (length(setdiff(names(graph),  c('v1', 'v2', 'w'))) > 1) stop("Wrong names of variables")
   
   vec1<-unique(graph[,1]) #make vector for the vertex nodes
   dist<-rep(Inf,length(vec1)) #filling up vector with Infs for every vertex node
