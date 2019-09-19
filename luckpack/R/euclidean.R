@@ -6,6 +6,7 @@
 #' @examples
 #' euclidean(123612, 13892347912)
 #' euclidean(100, 1000)
+#' @references https://en.wikipedia.org/wiki/Euclidean algorithm
 #' @export
 euclidean <- function(x,y){
   r <- x%%y;
