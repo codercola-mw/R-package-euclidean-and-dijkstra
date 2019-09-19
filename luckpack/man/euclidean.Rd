@@ -21,3 +21,6 @@ The Euclidean Algorithm
 euclidean(123612, 13892347912)
 euclidean(100, 1000)
 }
+\references{
+https://en.wikipedia.org/wiki/Euclidean algorithm
+}

@@ -10,5 +10,5 @@
 #'   \item{w}{weight of the edges}
 #' }
 #' @name wiki_graph
-#' @source \url{https://en.wikipedia.org/wiki/Dijkstras_algorithm}
+#' @references \url{https://en.wikipedia.org/wiki/Dijkstras_algorithm}
 "wiki_graph"

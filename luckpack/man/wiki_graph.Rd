@@ -10,14 +10,14 @@
   \item{v2}{edges}
   \item{w}{weight of the edges}
 }}
-\source{
-\url{https://en.wikipedia.org/wiki/Dijkstras_algorithm}
-}
 \usage{
 wiki_graph
 }
 \description{
 A data frame containing three variables; the edges of a graph and 
 the weight of the edges.
+}
+\references{
+\url{https://en.wikipedia.org/wiki/Dijkstras_algorithm}
 }
 \keyword{datasets}
